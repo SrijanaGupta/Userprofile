@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center" *ngIf="!userRetreived" style="margin-top: 20%;">
+    <div  class="spinner-border text-dark " role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div class="container" *ngIf="userRetreived">
+  <nav class="navbar navbar-light bg-dark">
+    <div class="navbar-brand mb-0 h1" style="color: aliceblue;">USERS</div>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sort
+      </button>
+      <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left" style="background-color: rgb(192, 189, 189);cursor: pointer;" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item"  (click)="sorting($event)">None</a>
+        <a class="dropdown-item" (click)="sorting($event)">First Name</a>
+        <a class="dropdown-item" (click)="sorting($event)">Last Name</a>
+      </div>
+    </div>
+  </nav>
+  <div class="row h-100" >
+    <div class="col-md-4 my-auto grids" *ngFor="let user of userDetails | keyvalue" id='{{user.value.id}}' (click)="goToProfilePage($event.target)">
+      <img src="{{user.value.avatar}}" alt="{{user.value.first_name}}" id='{{user.value.id}}' (click)="goToProfilePage($event.target)" class="animate__animated animate__fadeInUp">
+      <div id='{{user.value.id}}' (click)="goToProfilePage($event.target)">{{user.value.first_name}} {{user.value.last_name}}</div>
+    </div>
+  </div>
+</div>

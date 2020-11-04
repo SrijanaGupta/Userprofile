@@ -1,0 +1,19 @@
+.grids{
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 2% 0 2% 0;
+    cursor: pointer;
+    -webkit-transition: all 2.5s ease-in-out;
+    -moz-transition: all 2.5s ease-in-out;
+    transition: all 2.5s ease-in-out;
+}
+
+.spinner{
+    position: absolute;
+    margin: auto;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
